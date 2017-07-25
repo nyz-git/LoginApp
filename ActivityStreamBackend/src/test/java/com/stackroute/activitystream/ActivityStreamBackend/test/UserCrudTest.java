@@ -36,17 +36,17 @@ public class UserCrudTest {
 
 	}
 
-	/*@Test
+	@Test
 	public void userRegisterTesCases() {
 		//user.setUid(2);
-		user.setEmail("aaaaaxyz@niit.com");
+		user.setEmail("aaaaaxyz.om");
 		user.setFirstName("XaaaaYZ");
 		user.setLastName("aaaNIIT");
-		user.setPhoneNumber("9898989898");
+		user.setPhoneNumber("989898");
 		user.setPassword("aaxyz");
-		user.setUserName("aaxyz");
+		user.setUserName("ar");
 		assertEquals("User Registered Sucessfully", User.class,userDAO.registerUser(user).getClass());
-	}*/
+	}
 
 	/*@Test
 	public void userValidateTest() {
@@ -63,7 +63,7 @@ public class UserCrudTest {
 		displayUserById("Single User",user);
 	}*/
 	
-	@Test
+/*	@Test
 	public void getAllUser() {
 		
 		
@@ -74,7 +74,7 @@ public class UserCrudTest {
 		displayAllUsers("List of All Registered Users",users);
 		
 		
-	}
+	}*/
 	private void displayUserById(String testCaseName, User user) {
 		System.out.println(testCaseName);
 		System.out.println(user.getFirstName());

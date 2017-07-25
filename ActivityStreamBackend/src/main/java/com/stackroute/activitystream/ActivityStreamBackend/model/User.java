@@ -18,20 +18,24 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int uid;
+	
 	@NotNull
 	private String firstName;
+	
 	@NotNull
 	private String lastName;
 	
 	@Column(unique = true,nullable = false)
 	private String userName;
+	
 	@NotNull
 	private String password;
+	
 	@NotNull
 	@Email
 	private String email;
-	@NotNull
 	
+	@NotNull
 	@Size(min = 10,max=10)
 	private String phoneNumber;
 	

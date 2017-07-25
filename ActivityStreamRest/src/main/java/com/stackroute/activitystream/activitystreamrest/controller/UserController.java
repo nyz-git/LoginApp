@@ -27,7 +27,7 @@ public class UserController {
 	public ResponseEntity insertUser(@RequestBody User user) {
 		try {
 			User newUser = userDAO.registerUser(user);
-			return new ResponseEntity(HttpStatus.OK);
+			return new ResponseEntity<User>(newUser, HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -57,6 +57,31 @@ public class UserController {
 		} else {
 			return new ResponseEntity<List<User>>(users, HttpStatus.OK);
 
+		}
+
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public ResponseEntity<?> login(@RequestBody User user, HttpSession session) {
+		User validUser = userDAO.validateUser(user);
+		if (validUser == null) {
+			System.out.println("No User Found");
+			return new ResponseEntity(HttpStatus.UNAUTHORIZED);
+		} else {
+			System.out.println("User Found");
+			session.setAttribute("user", validUser);
+			return new ResponseEntity<User>(validUser, HttpStatus.OK);
+		}
+	}
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.PUT)
+	public ResponseEntity<?> logOut(HttpSession session) {
+		User user = (User) session.getAttribute("user");
+		if (user == null) {
+			return new ResponseEntity(HttpStatus.UNAUTHORIZED);
+		} else {
+			session.invalidate();
+			return new ResponseEntity<Void>(HttpStatus.OK);
 		}
 
 	}
