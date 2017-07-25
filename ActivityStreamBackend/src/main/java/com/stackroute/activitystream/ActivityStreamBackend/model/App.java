@@ -1,19 +1,19 @@
-package com.stackroute.activitystream.ActivityStreamBackend;
+/*package com.stackroute.activitystream.ActivityStreamBackend.model;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-/**
+*//**
  * Hello world!
  *
- */
+ *//*
 public class App {
 	public static void main(String[] args) {
 
 		UserDetails userDetails = new UserDetails();
-		userDetails.setId(101);
+		userDetails.setId(102);
 		userDetails.setFirstName("Niyaz");
 		userDetails.setLastName("Ahmed");
 		userDetails.setEmail("niyaz.ahmed@niit.com");
@@ -29,3 +29,4 @@ public class App {
 		transaction.commit();
 	}
 }
+*/

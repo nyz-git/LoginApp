@@ -1,4 +1,4 @@
-package com.stackroute.activitystream.ActivityStreamBackend;
+package com.stackroute.activitystream.ActivityStreamBackend.test;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
